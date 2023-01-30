@@ -2,15 +2,27 @@
   "pokemon": [
     {
       "id": 1,
-      "name":"pikachu",
+      "name": "bulbasaur",
+      "speciality": "water",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
+    },
+    {
+      "id": 2,
+      "name": "ivyasaur",
+      "speciality": "poison",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/002.png"
+    },
+    {
+      "id": 3,
+      "name": "pikachu",
       "speciality": "poison",
       "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png"
     },
     {
-      "id": 2,
-      "name":"bulbasaur",
-      "speciality": "poison",
-      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/1.png"
+      "name": "raichu",
+      "speciality": "elecricity spark",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/026.png",
+      "id": 4
     }
   ],
   "comments": [
