@@ -1,0 +1,26 @@
+{
+  "pokemon": [
+    {
+      "id": 1,
+      "name":"pikachu",
+      "speciality": "poison",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png"
+    },
+    {
+      "id": 2,
+      "name":"bulbasaur",
+      "speciality": "poison",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/1.png"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

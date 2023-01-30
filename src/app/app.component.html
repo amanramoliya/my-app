@@ -8,10 +8,40 @@
     type="button"
     data-bs-toggle="modal"
     data-bs-target="#exampleModal"
-    class="btn btn-primary m-5 position-absolute top-0 end-0"
+    class="btn btn-primary m-2"
   >
     Add pokemon
   </button>
+  <br />
+  <!-- table  -->
+  <div *ngIf="pokemonToDisplay.length === 0; else elseBlock">No Pokemons</div>
+  <ng-template #elseBlock>
+    <table class="table" id="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Speciality</th>
+          <th scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of pokemonToDisplay">
+          <th scope="row">{{ i.id }}</th>
+          <td>{{ i.name }}</td>
+          <td>{{ i.speciality }}</td>
+          <td>
+            <a
+              href="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/0{{
+                i.id
+              }}.png"
+              >{{ i.name }}
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
   <!-- Modal -->
   <div
     class="modal fade"
