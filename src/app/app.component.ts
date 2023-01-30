@@ -9,17 +9,23 @@ import { PokemonService } from './services/pokemon.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  [x: string]: any;
   title = 'my-app';
   pokemonForm: FormGroup;
   allPokemon: PokemonModel[];
   pokemonToDisplay: PokemonModel[];
+  isAdded: boolean;
 
   constructor(private fb: FormBuilder, private pokemonService: PokemonService) {
     this.pokemonForm = fb.group({});
     this.pokemonToDisplay = [];
     this.allPokemon = [];
-
+    this.isAdded = false;
     this.pokemonService = pokemonService;
+  }
+
+  removeAlerMsg() {
+    this.isAdded = false;
   }
 
   ngOnInit() {
@@ -61,7 +67,12 @@ export class AppComponent implements OnInit {
     };
     this.pokemonService.addPokemon(pokemon).subscribe((response) => {
       console.log(response);
+      this.pokemonToDisplay.unshift(response);
+      
       this.clearForm();
+      this.isAdded = true;
+    }, error => {
+      console.log(error);
     });
   }
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <app-header></app-header>
   <button
     type="button"
@@ -8,13 +8,18 @@
   >
     Add pokemon
   </button>
-
+  <div *ngIf="isAdded" class="popup">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Pokemon Added!</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="removeAlerMsg()"></button>
+    </div>
+  </div>
   <div *ngIf="pokemonToDisplay.length === 0; else elseBlock">No Pokemons</div>
   <div>
     <ng-template #elseBlock>
       <div class="row">
         <div
-          class="col col-lg-4 col-md-3 col-sm-1"
+          class="col col-lg-3 col-md-4 col-sm-1"
           *ngFor="let pok of pokemonToDisplay"
         >
           <app-pokemon-card [pokemon]="pok"></app-pokemon-card>
